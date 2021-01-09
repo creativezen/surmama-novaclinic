@@ -1,0 +1,64 @@
+.menu {
+    margin: 0; //reset ul
+    padding: 0; //reset ul
+    @include row-flex();
+    justify-content: space-between;
+
+    &__item {
+        padding-left: 15px;
+        padding-right: 15px;
+        background-color: $blue;
+        transition: all $basic-transition;
+
+        &:hover {
+            background-color: rgba($blue-light, 0.24);
+        }
+    }
+
+    &__item-link {
+        display: block;
+        padding-top: 33px;
+        padding-bottom: 33px;
+
+        font-weight: $font-semibold;
+        font-size: 1.3rem;
+        letter-spacing: 0.02em;
+        color: $white;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+}
+
+
+@media only screen and (max-width: 1024px) {
+
+    .menu {
+        display: block;
+        padding-top: 40px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .menu__item-link {
+        padding-left: 30px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+
+    .menu {
+        padding-top: 20px;
+    }
+
+    .menu-button {
+        width: 24px;
+    }
+
+    .menu__item-link {
+        padding-left: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}

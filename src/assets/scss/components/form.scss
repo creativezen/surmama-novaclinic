@@ -1,0 +1,180 @@
+.form {
+
+    $parent: &;
+
+    &__label {
+        display: block;
+        margin-bottom: 1.5rem;
+
+        font-size: 1.5rem;
+        font-weight: $font-semibold;
+        color: $black;
+        line-height: 100%;
+    }
+
+    &__input {
+        height: 56px;
+        width: 100%;
+        padding-left: 3rem;
+
+        border: none;
+        border-radius: 8px;
+        background-color: $blue-light;
+
+        font-size: 1.5rem;
+
+        &::placeholder {
+            font-size: 1.5rem;
+            font-weight: $font-medium;
+            color: $blue;
+        }
+    }
+
+    &__input-textarea {
+        min-height: 17rem;
+        padding-right: 3rem;
+        padding-bottom: 2rem;
+    }
+
+    &__item,
+    &__item+&__item {
+        margin-top: 2rem;
+    }
+
+    &__item-checkbox {
+        margin-top: 1.2rem;
+        margin-bottom: 1.2rem;
+    }
+
+    &__checkbox {
+        white-space: 20px;
+        height: 20px;
+    }
+
+    &__label-consent {
+        font-size: 1.3rem;
+        font-weight: $font-light;
+        line-height: 140%;
+    }
+
+    .btn {
+        display: block;
+        width: 100%;
+        max-width: 440px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &--anketa {
+        padding-top: 2rem;
+
+        #{$parent}__item {
+            margin-bottom: 2rem;
+        }
+    }
+
+    &--white {
+
+        #{$parent}__label {
+            color: $white;
+        }
+
+        #{$parent}__input {
+            background-color: $white;
+            box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.05);
+        }
+
+        #{$parent}__label-consent {
+            color: $white;
+        }
+    }
+}
+
+.option {
+    display: block;
+}
+
+.check {
+    padding-left: 2.2em;
+    font-size: 1.3rem;
+
+    &__input {
+        @extend .visually-hidden; // None visible width support IE 11
+
+        &:checked+.check__box {
+            background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='17' height='17' rx='2' fill='%2358C0E7'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.8787 5.28639C13.1284 4.87626 12.9802 4.35182 12.5477 4.11503C12.1151 3.87823 11.562 4.01876 11.3123 4.42889L8.06656 9.75952L5.54381 7.36743C5.19064 7.03256 4.61804 7.03256 4.26488 7.36743C3.91171 7.70231 3.91171 8.24525 4.26488 8.58012L7.50766 11.6549C7.54884 11.694 7.59301 11.7285 7.63947 11.7584C7.69169 11.8063 7.75088 11.849 7.81664 11.885C8.24918 12.1218 8.80227 11.9812 9.052 11.5711L12.8787 5.28639Z' fill='white'/%3E%3C/svg%3E%0A");
+        }
+
+        &:disabled+.check__box {
+            background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.5' y='0.5' width='16' height='16' rx='1.5' fill='%23E8E8E8' stroke='%23E8E8E8'/%3E%3C/svg%3E%0A");
+        }
+
+        &:disabled:checked+.check__box {
+            background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='17' height='17' rx='2' fill='%23E8E8E8'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.8787 5.28639C13.1284 4.87626 12.9802 4.35182 12.5477 4.11503C12.1151 3.87823 11.562 4.01876 11.3123 4.42889L8.06656 9.75952L5.54381 7.36743C5.19064 7.03256 4.61804 7.03256 4.26488 7.36743C3.91171 7.70231 3.91171 8.24525 4.26488 8.58012L7.50766 11.6549C7.54884 11.694 7.59301 11.7285 7.63947 11.7584C7.69169 11.8063 7.75088 11.849 7.81664 11.885C8.24918 12.1218 8.80227 11.9812 9.052 11.5711L12.8787 5.28639Z' fill='%23B4B4B4'/%3E%3C/svg%3E%0A");
+        }
+    }
+
+    &__box {
+        position: absolute;
+        width: 1.4em;
+        height: 1.4em;
+        margin-top: 0.2em;
+        margin-left: -2.2em;
+
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.5' y='0.5' width='16' height='16' rx='1.5' fill='white' stroke='%235CC0E5'/%3E%3C/svg%3E%0A");
+        background-size: 100%;
+    }
+}
+
+textarea {
+    padding-top: 2rem;
+    min-height: 170px;
+}
+
+
+@media only screen and (max-width: 780px) {
+
+    .form--anketa {
+        padding-top: 2rem;
+    }
+
+    .form .btn {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+
+    .form--anketa .form__item {
+        margin-bottom: 0;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+
+    .form__input {
+        padding-left: 2rem;
+    }
+
+    .form--anketa {
+        padding-top: 0;
+    }
+
+    .check {
+        font-size: 1.2rem;
+        line-height: 130%;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+
+    .form__input {
+        height: 50px;
+    }
+
+    .check {
+        font-size: 1rem;
+    }
+}

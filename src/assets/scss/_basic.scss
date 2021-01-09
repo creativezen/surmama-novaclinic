@@ -1,0 +1,46 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: $white;
+
+    font-family: $font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: $black;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.rose {
+    color: $rose;
+}
+
+.blue {
+    color: $blue;
+}
+
+@media only screen and (max-width: 1024px) {
+
+    body {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+
+    body {
+        font-size: 1.4rem;
+        line-height: 150%;
+    }
+}

@@ -1,0 +1,180 @@
+.title {
+    font-weight: $font-regular;
+    font-size: 3.8rem;
+    line-height: 130%;
+    letter-spacing: 0.01em;
+
+    transition: all $basic-transition;
+
+    &--hero {
+        margin-bottom: 4rem;
+        max-width: 800px;
+        font-size: 4.5rem;
+        font-weight: $font-light;
+        line-height: 140%;
+        text-transform: uppercase;
+        letter-spacing: 0.01em;
+    }
+
+    &--section {
+        margin-bottom: 6rem;
+        font-weight: $font-light;
+        text-align: center;
+    }
+
+    &--article {
+        margin-bottom: 6rem;
+        max-width: 780px;
+        line-height: 140%;
+        text-transform: uppercase;
+    }
+
+    &--banner {
+        margin-bottom: 4rem;
+        font-weight: $font-light;
+        text-align: center;
+        color: $white;
+    }
+}
+
+.text {
+
+    font-weight: $font-regular;
+    line-height: 180%;
+
+    &--medium { font-weight: $font-medium; }
+
+    &--semibold { font-weight: $font-semibold; }
+
+    &--bold { font-weight: $font-bold; }
+
+    &--banner {
+        font-weight: $font-semibold;
+        line-height: 180%;
+        text-align: center;
+        color: $white;
+    }
+
+    &--feedback-rose {
+        font-size: 1.8rem;
+        font-weight: $font-semibold;
+        color: $rose;
+    }
+
+    &--big {
+        font-size: 2rem;
+        font-weight: $font-semibold;
+        line-height: 180%;
+    }
+}
+
+.title-description {
+
+    padding-bottom: 2rem;
+    border-bottom: 1px solid $gray-line;
+
+    font-size: 1.9rem;
+    font-weight: $font-light;
+    line-height: 160%;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.text + .text { margin-top: 3rem; }
+
+.title-description + .text { margin-top: 3rem; }
+
+
+@media only screen and (max-width: 1024px) {
+
+    .title {
+        font-size: 3.4rem;
+        letter-spacing: -0.6px;
+    }
+
+    .title--section {
+        margin-bottom: 4rem;
+    }
+
+    .title-description {
+        padding-bottom: 3rem;
+        font-size: 1.8rem;
+    }
+}
+
+@media only screen and (max-width: 780px) {
+
+    .title--section {
+        margin-bottom: 3rem;
+    }
+
+    .title:not(.title .title--banner) {
+        text-align: left;
+    }
+
+    .title-description {
+        padding-bottom: 1.6rem;
+        line-height: 140%;
+    }
+
+    .title--article {
+        margin-bottom: 5rem;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+
+    .title--section {
+        margin-bottom: 3rem;
+    }
+
+    .title--article {
+        margin-bottom: 3rem;
+        font-size: 3.2rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+
+    .text {
+        line-height: 170%;
+    }
+
+    .text + .text {
+        margin-top: 2.2rem;
+    }
+
+    .title--article {
+        margin-bottom: 2.8rem;
+        font-size: 2.8rem;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+
+    .title {
+        font-size: 3.2rem;
+        line-height: 110%;
+        letter-spacing: -0.8px;
+    }
+
+    .title--section {
+        margin-bottom: 2.4rem;
+    }
+
+    .title-description {
+        font-size: 1.7rem;
+    }
+
+    .text--big {
+        font-size: 1.8rem;
+        line-height: 140%;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+
+    .title {
+        font-size: 2.9rem;
+    }
+}

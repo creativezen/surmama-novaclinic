@@ -1,0 +1,205 @@
+.header {
+
+    background-color: $white;
+
+    &__top-panel {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-top: 36px;
+        padding-bottom: 36px;
+    }
+
+    &__tagline {
+        max-width: 200px;
+        padding-top: 7px;
+        font-size: 1.1rem;
+        line-height: 170%;
+        color: $gray;
+    }
+
+    &__contact {
+
+        .btn-contact+.btn-contact {
+            margin-left: 20px;
+        }
+    }
+
+    &__nav {
+        background-color: $blue;
+    }
+
+    &__menu-button {
+        display: none;
+
+        &__burger {
+            position: relative;
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+
+            z-index: 8100;
+
+            .bars {
+                display: inline-block;
+                position: relative;
+                top: -6px;
+                width: 24px;
+                height: 2px;
+                background-color: $blue;
+                transition: all .3s ease;
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    background-color: $blue;
+                    width: 24px;
+                    height: 2px;
+                    top: -8px;
+                    left: 0;
+                    transition: all $basic-transition;
+                }
+
+                &::after {
+                    position: absolute;
+                    content: '';
+                    background-color: $blue;
+                    width: 24px;
+                    height: 2px;
+                    top: 8px;
+                    left: 0;
+                    transition: all $basic-transition;
+                }
+            }
+        }
+
+        &--active {
+
+            .header__menu-button__burger {
+
+                .bars {
+                    height: 0;
+                    width: 0;
+
+                    &::after,
+                    &::before {
+                        width: 26px;
+                        background-color: $white;
+                    }
+
+                    &::after {
+                        transform: rotate(-45deg);
+                        top: -7px;
+                    }
+
+                    &::before {
+                        transform: rotate(45deg);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 1024px) {
+
+    .header__menu-button {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header__top-panel .btn-contact {
+        width: 50px;
+    }
+
+    .header__top-panel .btn-contact .btn-contact__title,
+    .header__top-panel .btn-contact .btn-contact__text {
+        display: none;
+    }
+
+    .header__top-panel .btn-contact {
+        padding: 0;
+    }
+
+    .header__nav {
+        position: fixed;
+        left: -400px;
+        top: 0;
+        height: 0;
+        height: 100vh;
+        width: 100%;
+        max-width: 340px;
+        z-index: 8100;
+
+        background-color: $blue;
+        box-shadow: 10px 0px 14px rgba($black, 0.3);
+        transition: all $basic-transition;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+
+    .header__top-panel {
+        padding-top: 26px;
+        padding-bottom: 26px;
+    }
+
+    .header__tagline {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+        clip: rect(0 0 0 0);
+        overflow: hidden;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+
+    .header__contact .btn-contact+.btn-contact {
+        margin-left: 8px;
+    }
+
+    .header__top-panel .btn-contact {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+
+    .logo {
+        max-width: 140px;
+    }
+
+    .header__contact .btn-contact+.btn-contact {
+        margin-left: 5px;
+    }
+
+    .header__top-panel .btn-contact,
+    .header__top-panel .btn-contact .btn-contact__icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .header__nav {
+        max-width: 240px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+
+    .header__top-panel {
+        padding-top: 16px;
+    }
+
+    .header__top-panel .btn-contact .btn-contact__icon {
+        background-color: transparent;
+    }
+}

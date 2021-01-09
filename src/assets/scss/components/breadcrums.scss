@@ -1,0 +1,42 @@
+.breadcrumbs {
+
+    $parent: &;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+
+    font-size: 1.4rem;
+
+    &__item:last-child {
+        pointer-events: none;
+
+        #{$parent}__link {
+            color: $black;
+        }
+    }
+
+    &__item + &__item {
+        margin-left: 2.4rem;
+    }
+
+    &__link {
+        font-size: inherit;
+        font-weight: $font-regular;
+    }
+}
+
+
+@media only screen and (max-width: 480px) {
+
+    .breadcrumbs {
+        display: block;
+    }
+
+    .breadcrumbs__item + .breadcrumbs__item {
+        margin-left: 0;
+        margin-top: 0.3rem;
+    }
+}

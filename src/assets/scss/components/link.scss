@@ -1,0 +1,11 @@
+.link {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: $font-semibold;
+    line-height: inherit;
+    color: $blue;
+    text-decoration: none;
+    transition: $basic-transition;
+
+    &:hover { color: $rose; }
+}

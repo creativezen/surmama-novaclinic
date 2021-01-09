@@ -1,0 +1,86 @@
+.faq {
+
+    $parent: &;
+
+    margin: 0; //reset ul
+    padding: 0; //reset ul
+
+    &__item {
+        position: relative;
+        padding: 2.8rem 6.6rem 3rem 0;
+
+        font-weight: $font-semibold;
+        font-size: 2rem;
+        letter-spacing: 0;
+        overflow: hidden;
+        cursor: pointer;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 3.1rem;
+            right: 0;
+            width: 20px;
+            height: 20px;
+
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11.0714 8.92857V0H8.92857V8.92857H0V11.0714H8.92857V20H11.0714V11.0714H20V8.92857H11.0714Z' fill='%235CC0E5'/%3E%3C/svg%3E%0A");
+        }
+
+        &:hover {
+            color: $rose;
+
+            .text {
+                color: $black;
+            }
+        }
+
+        &--active {
+
+            &::after {
+                background-image: url("data:image/svg+xml,%3Csvg width='20' height='2' viewBox='0 0 20 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='20' height='2' fill='%23FA9ABA'/%3E%3C/svg%3E ");
+            }
+        }
+    }
+
+    &__item+&__item {
+        border-top: 1px solid $blue;
+    }
+
+    .text {
+        display: none;
+        margin-top: 3rem;
+
+        font-size: 1.8rem;
+        line-height: 180%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+
+    .faq__item {
+        font-size: 1.8rem;
+    }
+
+    .faq .text {
+        margin-top: 1rem;
+        font-size: 1.5rem;
+        line-height: 150%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+
+    .faq__item {
+        padding: 1.9rem 4.6rem 2.1rem 0;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+
+    .faq__item {
+        font-size: 1.7rem;
+        font-weight: $font-medium;
+    }
+}
