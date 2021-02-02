@@ -66,7 +66,6 @@ export const modal = ({ window, container, active, open, close }) => {
                 // MAP
                 // ===
                 case 'map':
-
                     // Получили src карты
                     // ===================
                     let src = currentTARGET.dataset.src
@@ -98,7 +97,6 @@ export const modal = ({ window, container, active, open, close }) => {
             // Показали модальное окно
             // =======================
             currentMODAL.classList.add(active)
-
         }
 
         // Close
